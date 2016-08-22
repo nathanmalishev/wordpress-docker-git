@@ -1,0 +1,17 @@
+wordpress:
+  image: wordpress
+  links:
+    - mysql
+  ports:
+    - "8080:80"
+  volumes:
+    - ./wordpress:/var/www/html
+mysql:
+  image: mysql
+  volumes:
+    - ./sqlBackup:/sqlBackup
+  environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
