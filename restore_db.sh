@@ -12,7 +12,7 @@ then
 fi
 
 echo restoring file "${FILE_NAME}".sql
-(docker exec -i "$CONTAINER" bash -c "cd ${ROOT_DIR} && mysql -u admin -padmin db < ${FILE_NAME}.sql")
+(docker exec -i "$CONTAINER" bash -c "cd ${ROOT_DIR} && mysql -u ${MYSQL_USER} -p${MYSQL_PASSWORD} ${MYSQL_DATABASE} < ${FILE_NAME}.sql")
 
 # Clean exit:
 exit 0;

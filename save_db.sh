@@ -12,6 +12,6 @@ then
 fi
 
 echo backing up mysql to "${FILE_NAME}".sql
-docker exec -i "$CONTAINER" bash -c "cd ${ROOT_DIR} && mysqldump -l -u admin -padmin db > ${FILE_NAME}.sql"
+docker exec -i "$CONTAINER" bash -c "cd ${ROOT_DIR} && mysqldump -l -u ${MYSQL_USER} -p${MYSQL_PASSWORD} ${MYSQL_DATABASE} > ${FILE_NAME}.sql"
 # Clean exit:
 exit 0;
