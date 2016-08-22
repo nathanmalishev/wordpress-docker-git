@@ -1,5 +1,5 @@
 #!/bin/sh
-CONTAINER="2016wcbilby_mysql_1"
+CONTAINER="wordpressdockergit_mysql_1"
 ROOT_DIR="/sqlBackup"
 FILE_NAME="currentDump"
 MYSQL_USER="admin"
